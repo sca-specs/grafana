@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 300 180"
+   width="300"
+   height="180"
+   version="1.1"
+   id="molino">
+  <defs>
+    <linearGradient id="bodyGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="40%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="capGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#166534" />
+      <stop offset="50%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#166534" />
+    </linearGradient>
+    <linearGradient id="shaftGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="50%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+    <radialGradient id="shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.3" />
+    </radialGradient>
+  </defs>
+
+  <!-- SOPORTES -->
+  <rect x="30" y="155" width="50" height="20" fill="#64748b" rx="3" />
+  <rect x="220" y="155" width="50" height="20" fill="#64748b" rx="3" />
+  <rect x="25" y="170" width="60" height="10" fill="#475569" rx="2" />
+  <rect x="215" y="170" width="60" height="10" fill="#475569" rx="2" />
+  <rect x="45" y="115" width="20" height="40" fill="#334155" stroke="#1e293b" stroke-width="1.5" rx="2" />
+  <rect x="235" y="115" width="20" height="40" fill="#334155" stroke="#1e293b" stroke-width="1.5" rx="2" />
+  <rect x="42" y="95" width="26" height="20" fill="#94a3b8" rx="4" />
+  <circle cx="55" cy="105" r="8" fill="#cbd5e1" />
+  <circle cx="55" cy="105" r="4" fill="#64748b" />
+  <rect x="232" y="95" width="26" height="20" fill="#94a3b8" rx="4" />
+  <circle cx="245" cy="105" r="8" fill="#cbd5e1" />
+  <circle cx="245" cy="105" r="4" fill="#64748b" />
+
+  <!-- EJE -->
+  <rect x="15" y="97" width="35" height="16" fill="url(#shaftGrad)" rx="3" />
+  <rect x="250" y="97" width="35" height="16" fill="url(#shaftGrad)" rx="3" />
+  <polygon points="50,93 70,97 70,113 50,117" fill="#64748b" />
+  <polygon points="250,93 230,97 230,113 250,117" fill="#64748b" />
+
+  <!-- PIÑÓN FIJO -->
+  <g>
+    <rect x="258" y="83" width="8" height="44" rx="2" fill="#475569" stroke="#334155" stroke-width="1" />
+    <rect x="270" y="80" width="8" height="50" rx="2" fill="#475569" stroke="#334155" stroke-width="1" />
+    <rect x="282" y="87" width="8" height="36" rx="2" fill="#475569" stroke="#334155" stroke-width="1" />
+    <rect x="247" y="87" width="8" height="36" rx="2" fill="#475569" stroke="#334155" stroke-width="1" />
+    <rect x="245" y="91" width="40" height="28" fill="#64748b" rx="2" />
+    <circle cx="265" cy="105" r="10" fill="#475569" />
+  </g>
+
+  <!-- TAPAS -->
+  <rect x="75" y="55" width="20" height="90" fill="url(#capGreen)" stroke="#14532d" stroke-width="2" rx="3" />
+  <ellipse cx="75" cy="100" rx="6" ry="38" fill="#166534" stroke="#14532d" stroke-width="2" />
+  <rect x="205" y="55" width="20" height="90" fill="url(#capGreen)" stroke="#14532d" stroke-width="2" rx="3" />
+  <ellipse cx="225" cy="100" rx="6" ry="38" fill="#166534" stroke="#14532d" stroke-width="2" />
+
+  <!-- CUERPO DEL MOLINO -->
+  <rect x="95" y="50" width="110" height="100" fill="url(#bodyGreen)" stroke="#14532d" stroke-width="2.5" rx="5" />
+
+  <!-- PERNOS ANIMADOS -->
+  <g>
+    <circle cx="105" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-0.0s" repeatCount="indefinite" /></circle>
+    <circle cx="105" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-1.5s" repeatCount="indefinite" /></circle>
+    <circle cx="120" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-0.214s" repeatCount="indefinite" /></circle>
+    <circle cx="120" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-1.714s" repeatCount="indefinite" /></circle>
+    <circle cx="135" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-0.428s" repeatCount="indefinite" /></circle>
+    <circle cx="135" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-1.928s" repeatCount="indefinite" /></circle>
+    <circle cx="150" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-0.643s" repeatCount="indefinite" /></circle>
+    <circle cx="150" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-2.143s" repeatCount="indefinite" /></circle>
+    <circle cx="165" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-0.857s" repeatCount="indefinite" /></circle>
+    <circle cx="165" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-2.357s" repeatCount="indefinite" /></circle>
+    <circle cx="180" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-1.071s" repeatCount="indefinite" /></circle>
+    <circle cx="180" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-2.571s" repeatCount="indefinite" /></circle>
+    <circle cx="195" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-1.286s" repeatCount="indefinite" /></circle>
+    <circle cx="195" r="4" fill="#ffffff" stroke="#14532d" stroke-width="2"><animate attributeName="cy" values="145;55" dur="3s" begin="-2.786s" repeatCount="indefinite" /></circle>
+  </g>
+
+  <!-- Sombra interior -->
+  <rect x="95" y="50" width="110" height="100" fill="url(#shadow)" rx="5" opacity="0.4" pointer-events="none" />
+
+  <!-- VALOR DEL TONELAJE (formato idéntico al SVG por defecto) -->
+  <text
+     x="150"
+     y="105"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="20"
+     fill="#ffffff"
+     font-weight="bold"
+     stroke="#1e293b"
+     stroke-width="0.5"
+     inkscape:label="{&quot;attr&quot;:&quot;get&quot;,&quot;tag&quot;:&quot;@1&quot;,&quot;type&quot;:&quot;Good&quot;}"
+     xml:space="preserve"><tspan x="150" y="105">-- t/h</tspan></text>
+</svg>
