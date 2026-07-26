@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     viewBox="0 0 300 180" width="300" height="180">
+
+  <!-- CUERPO DEL MOLINO (cambia de color según tonelaje) -->
+  <rect id="molino-body" x="95" y="50" width="110" height="100" fill="#22c55e" stroke="#14532d" stroke-width="2.5" rx="5" />
+  
+  <!-- TEXTO CON TONELAJE (lee el tag @1) -->
+  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="22" fill="#ffffff" font-weight="bold"
+        inkscape:label='{"attr":"get","tag":"@1","type":"Good"}'>-- t/h</text>
+
+  <!-- SCRIPT QUE CAMBIA COLOR (oculto) -->
+  <rect x="0" y="0" width="0" height="0"
+        inkscape:label='{"attr":"set","src":"var v = $V(\"@1\"); var body = d3.select(\"#molino-body\"); if (v &gt; 0) { body.style(\"fill\", \"#22c55e\"); } else { body.style(\"fill\", \"#dc2626\"); }","tag":"#exec_on_update","type":"Data"}'
+  />
+</svg>
