@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 800 480"
+   width="100%"
+   height="100%"
+   version="1.1">
+  <defs>
+    <style>
+      .bg { fill: #f1f5f9; }
+      .gpu-layer { will-change: transform, opacity; transform: translateZ(0); }
+      
+      @keyframes boltRiseUp {
+        0%   { transform: translateY(64px); opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translateY(-64px); opacity: 0; }
+      }
+      .bolt-r1 { animation: boltRiseUp 3.2s linear infinite; }
+      .bolt-r2 { animation: boltRiseUp 3.2s linear infinite -0.4s; }
+      .bolt-r3 { animation: boltRiseUp 3.2s linear infinite -0.8s; }
+      .bolt-r4 { animation: boltRiseUp 3.2s linear infinite -1.2s; }
+      .bolt-r5 { animation: boltRiseUp 3.2s linear infinite -1.6s; }
+      .bolt-r6 { animation: boltRiseUp 3.2s linear infinite -2.0s; }
+      .bolt-r7 { animation: boltRiseUp 3.2s linear infinite -2.4s; }
+      .bolt-r8 { animation: boltRiseUp 3.2s linear infinite -2.8s; }
+
+      @keyframes gearTeethUp {
+        0%   { transform: translateY(0px); }
+        100% { transform: translateY(-24px); }
+      }
+      .gear-teeth-up { animation: gearTeethUp 0.35s linear infinite; }
+
+      @keyframes gearTeethDown {
+        0%   { transform: translateY(-24px); }
+        100% { transform: translateY(0px); }
+      }
+      .gear-teeth-down { animation: gearTeethDown 0.35s linear infinite; }
+
+      @keyframes motorVibration {
+        0%, 100% { transform: translateY(0px); }
+        25%      { transform: translateY(-0.5px); }
+        75%      { transform: translateY(0.5px); }
+      }
+      .vibrating-unit { animation: motorVibration 0.08s linear infinite; }
+
+      @keyframes statusPulse {
+        0%, 100% { opacity: 1; }
+        50%      { opacity: 0.3; }
+      }
+      .status-led { animation: statusPulse 1.2s ease-in-out infinite; }
+
+      .stopped .bolt-r1,
+      .stopped .bolt-r2,
+      .stopped .bolt-r3,
+      .stopped .bolt-r4,
+      .stopped .bolt-r5,
+      .stopped .bolt-r6,
+      .stopped .bolt-r7,
+      .stopped .bolt-r8 {
+        animation-play-state: paused !important;
+      }
+      .stopped .gear-teeth-up,
+      .stopped .gear-teeth-down {
+        animation-play-state: paused !important;
+      }
+      .stopped .vibrating-unit {
+        animation-play-state: paused !important;
+      }
+      .stopped .status-led {
+        animation-play-state: paused !important;
+      }
+    </style>
+
+    <pattern id="gearTeethPatternLowPoly" width="28" height="24" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="28" height="12" fill="#1e293b" />
+      <polygon points="2,12 26,12 26,22 2,22" fill="#d97706" />
+      <polygon points="2,12 14,12 14,22 2,22" fill="#f59e0b" />
+      <polygon points="2,12 26,12 14,15" fill="#fef08a" opacity="0.9"/>
+    </pattern>
+
+    <linearGradient id="cylinderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#86efac" />
+      <stop offset="20%"  stop-color="#4ade80" />
+      <stop offset="50%"  stop-color="#22c55e" />
+      <stop offset="80%"  stop-color="#16a34a" />
+      <stop offset="100%" stop-color="#14532d" />
+    </linearGradient>
+
+    <clipPath id="cylinderClip">
+      <rect x="336" y="144" width="352" height="128" rx="2"/>
+    </clipPath>
+    <clipPath id="gearMajorClip">
+      <rect x="300" y="120" width="28" height="160" rx="2"/>
+    </clipPath>
+    <clipPath id="gearPinionClip">
+      <rect x="300" y="278" width="28" height="52" rx="2"/>
+    </clipPath>
+
+    <g id="boltRowGroup">
+      <circle cx="352" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="384" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="416" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="448" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="480" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="512" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="544" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="576" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="608" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="640" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="672" cy="208" r="3.6" fill="#f1f5f9" stroke="#334155" stroke-width="0.5"/>
+    </g>
+  </defs>
+
+  <rect class="bg" width="800" height="480" />
+  <path d="M 0,376 L 800,376" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6,4" />
+
+  <g opacity="0.35">
+    <ellipse cx="152" cy="378" rx="128" ry="6" fill="#0f172a" />
+    <ellipse cx="296" cy="378" rx="36" ry="5" fill="#0f172a" />
+    <ellipse cx="512" cy="378" rx="240" ry="8" fill="#0f172a" />
+  </g>
+
+  <g>
+    <polygon points="24,372 776,372 776,380 24,380" fill="#334155" />
+    <polygon points="24,372 776,372 776,374 24,374" fill="#94a3b8" />
+    <polygon points="36,340 260,340 272,372 24,372" fill="#475569" />
+    <polygon points="36,340 260,340 260,342 36,342" fill="#cbd5e1" />
+    <rect x="44" y="362" width="8" height="10" fill="#1e293b" rx="1" />
+    <rect x="248" y="362" width="8" height="10" fill="#1e293b" rx="1" />
+    <polygon points="272,348 328,348 332,372 268,372" fill="#334155" />
+    <polygon points="272,348 328,348 328,350 272,350" fill="#64748b" />
+    <polygon points="260,260 332,260 324,372 268,372" fill="#1e293b" />
+    <polygon points="260,260 332,260 328,264 264,264" fill="#64748b" />
+    <polygon points="676,260 748,260 740,372 684,372" fill="#1e293b" />
+    <polygon points="676,260 748,260 744,264 680,264" fill="#64748b" />
+  </g>
+
+  <g class="vibrating-unit" id="vibrating-unit">
+    <g>
+      <polygon points="44,330 116,330 112,340 48,340" fill="#1e3a8a" />
+      <polygon points="44,330 116,330 116,331 44,331" fill="#60a5fa" />
+      <polygon points="48,276 112,276 120,300 112,330 48,330 40,300" fill="#2563eb" />
+      <polygon points="48,276 112,276 120,300 48,300" fill="#3b82f6" />
+      <polygon points="48,300 120,300 112,330 48,330" fill="#1d4ed8" />
+      <polygon points="48,276 112,276 110,278 50,278" fill="#93c5fd" />
+      <path d="M 58,276 L 58,330 M 69,276 L 69,330 M 80,276 L 80,330 M 91,276 L 91,330 M 102,276 L 102,330" stroke="#60a5fa" stroke-width="2.5" />
+      <path d="M 58,300 L 58,330 M 69,300 L 69,330 M 80,300 L 80,330 M 91,300 L 91,330 M 102,300 L 102,330" stroke="#1e40af" stroke-width="2" />
+      <polygon points="68,261 96,261 100,276 64,276" fill="#93c5fd" />
+      <polygon points="68,261 96,261 98,264 66,264" fill="#ffffff" />
+      <polygon points="38,282 48,276 48,330 38,324" fill="#0f172a" />
+      <circle cx="80" cy="258" r="2.8" fill="none" stroke="#93c5fd" stroke-width="1.2" />
+    </g>
+    <polygon points="120,296 152,296 152,304 120,304" fill="#cbd5e1" />
+    <polygon points="120,296 152,296 152,298 120,298" fill="#ffffff" />
+    <polygon points="130,288 142,288 142,312 130,312" fill="#0f172a" />
+    <polygon points="130,288 142,288 142,291 130,291" fill="#475569" />
+    <circle cx="136" cy="300" r="1.6" fill="#facc15" />
+    <g>
+      <polygon points="152,256 220,256 236,280 236,340 152,340" fill="#475569" />
+      <polygon points="152,256 220,256 236,280 152,280" fill="#64748b" />
+      <polygon points="152,280 236,280 236,340 152,340" fill="#334155" />
+      <polygon points="152,256 220,256 218,258 154,258" fill="#94a3b8" />
+      <polygon points="144,336 244,336 240,342 148,342" fill="#1e293b" />
+      <polygon points="160,250 204,250 208,256 156,256" fill="#94a3b8" />
+      <circle cx="168" cy="253" r="0.8" fill="#0f172a" />
+      <circle cx="196" cy="253" r="0.8" fill="#0f172a" />
+      <polygon points="200,288 224,288 228,312 204,312" fill="#1e293b" />
+      <polygon points="200,288 224,288 224,291 200,291" fill="#64748b" />
+      <circle cx="172" cy="312" r="4" fill="#facc15" />
+      <circle class="status-led" id="status-led" cx="224" cy="268" r="2.4" fill="#22c55e" />
+    </g>
+    <polygon points="236,296 300,296 300,304 236,304" fill="#cbd5e1" />
+    <polygon points="236,296 300,296 300,298 236,298" fill="#ffffff" />
+  </g>
+
+  <rect x="300" y="278" width="28" height="52" fill="#b45309" rx="1"/>
+  <g clip-path="url(#gearPinionClip)">
+    <g class="gear-teeth-down" id="pinon-dientes">
+      <rect x="300" y="256" width="28" height="96" fill="url(#gearTeethPatternLowPoly)" />
+    </g>
+  </g>
+
+  <rect x="300" y="120" width="28" height="160" fill="#b45309" rx="1"/>
+  <g clip-path="url(#gearMajorClip)">
+    <g class="gear-teeth-up" id="corona-dientes">
+      <rect x="300" y="96" width="28" height="208" fill="url(#gearTeethPatternLowPoly)" />
+    </g>
+  </g>
+
+  <polygon points="297,276 331,276 328,280 300,280" fill="#0f172a" opacity="0.85"/>
+
+  <g>
+    <polygon points="264,192 292,198 292,218 264,224" fill="#94a3b8" />
+    <polygon points="268,184 296,184 296,226 268,226" fill="#475569" />
+    <polygon points="268,184 296,184 296,205 268,205" fill="#64748b" />
+    <rect x="268" y="204" width="28" height="2.4" fill="#0f172a" />
+    <polygon points="692,198 720,192 720,224 692,218" fill="#94a3b8" />
+    <polygon points="692,184 720,184 720,226 692,226" fill="#475569" />
+    <polygon points="692,184 720,184 720,205 692,205" fill="#64748b" />
+    <rect x="692" y="204" width="28" height="2.4" fill="#0f172a" />
+  </g>
+
+  <g id="molino-body-group">
+    <rect x="336" y="144" width="352" height="128" rx="2" fill="#64748b" />
+    <rect x="328" y="144" width="8" height="128" fill="#1e293b" rx="1" />
+    <rect x="688" y="144" width="8" height="128" fill="#1e293b" rx="1" />
+    <rect id="molino-body" x="336" y="144" width="352" height="128" rx="2" fill="url(#cylinderGrad)" stroke="#14532d" stroke-width="2" />
+    <g clip-path="url(#cylinderClip)">
+      <g id="pernos">
+        <use href="#boltRowGroup" class="bolt-r1" />
+        <use href="#boltRowGroup" class="bolt-r2" />
+        <use href="#boltRowGroup" class="bolt-r3" />
+        <use href="#boltRowGroup" class="bolt-r4" />
+        <use href="#boltRowGroup" class="bolt-r5" />
+        <use href="#boltRowGroup" class="bolt-r6" />
+        <use href="#boltRowGroup" class="bolt-r7" />
+        <use href="#boltRowGroup" class="bolt-r8" />
+      </g>
+    </g>
+    <polygon points="336,144 688,144 688,172 336,172" fill="#ffffff" opacity="0.22" clip-path="url(#cylinderClip)"/>
+    <polygon points="336,172 688,172 688,228 336,228" fill="#cbd5e1" opacity="0.1" clip-path="url(#cylinderClip)"/>
+    <polygon points="336,240 688,240 688,272 336,272" fill="#0f172a" opacity="0.3" clip-path="url(#cylinderClip)"/>
+  </g>
+
+  <g transform="translate(464, 120)">
+    <rect x="-80" y="-28" width="160" height="56" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <text x="0" y="-8" text-anchor="middle" fill="#64748b" font-size="9" font-family="system-ui, sans-serif" font-weight="600">TONELAJE ACTUAL</text>
+    <text
+       x="0"
+       y="14"
+       text-anchor="middle"
+       font-family="system-ui, -apple-system, monospace"
+       font-size="16"
+       font-weight="800"
+       fill="#059669"
+       inkscape:label="{&quot;attr&quot;:&quot;get&quot;,&quot;tag&quot;:&quot;@1&quot;,&quot;type&quot;:&quot;Good&quot;}"
+       xml:space="preserve">
+      <tspan x="0" y="14">--.-</tspan>
+      <tspan font-size="10" fill="#64748b" font-weight="400"> t/h</tspan>
+    </text>
+  </g>
+
+  <rect x="0" y="0" width="0" height="0"
+        inkscape:label="{&quot;attr&quot;:&quot;set&quot;,&quot;src&quot;:&quot;var t = $V(\&quot;@1\&quot;); var svg = document.querySelector(\&quot;svg\&quot;); var body = d3.select(\&quot;#molino-body\&quot;); var pernos = d3.select(\&quot;#pernos\&quot;); var corona = d3.select(\&quot;#corona-dientes\&quot;); var pinon = d3.select(\&quot;#pinon-dientes\&quot;); var vibrar = d3.select(\&quot;#vibrating-unit\&quot;); var led = d3.select(\&quot;#status-led\&quot;); if (t &gt; 0) { svg.classList.remove(\&quot;stopped\&quot;); body.style(\&quot;fill\&quot;, \&quot;url(#cylinderGrad)\&quot;); body.style(\&quot;stroke\&quot;, \&quot;#14532d\&quot;); pernos.style(\&quot;display\&quot;, \&quot;block\&quot;); corona.style(\&quot;display\&quot;, \&quot;block\&quot;); pinon.style(\&quot;display\&quot;, \&quot;block\&quot;); } else { svg.classList.add(\&quot;stopped\&quot;); body.style(\&quot;fill\&quot;, \&quot;#dc2626\&quot;); body.style(\&quot;stroke\&quot;, \&quot;#7f1d1d\&quot;); pernos.style(\&quot;display\&quot;, \&quot;none\&quot;); corona.style(\&quot;display\&quot;, \&quot;none\&quot;); pinon.style(\&quot;display\&quot;, \&quot;none\&quot;); }&quot;,&quot;tag&quot;:&quot;#exec_on_update&quot;,&quot;type&quot;:&quot;Data&quot;}" />
+</svg>
