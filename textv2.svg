@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     viewBox="0 0 200 100" width="200" height="100">
+  <rect id="box" x="10" y="10" width="180" height="80" fill="#888888" rx="8" />
+  <text x="100" y="55" text-anchor="middle" font-family="Arial" font-size="20" fill="#ffffff"
+        inkscape:label='{"attr":"get","tag":"@1","type":"Good"}'>--</text>
+  <rect x="0" y="0" width="0" height="0"
+        inkscape:label='{"attr":"set","src":"var v = $V(\"@1\"); var box = d3.select(\"#box\"); if (v &gt; 0) { box.style(\"fill\", \"#22c55e\"); } else { box.style(\"fill\", \"#dc2626\"); }","tag":"#exec_on_update","type":"Data"}'
+  />
+</svg>
