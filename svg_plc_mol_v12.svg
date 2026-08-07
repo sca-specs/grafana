@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 360 210" width="100%" height="100%" version="1.1" id="molino">
+  <defs>
+    <style>
+      .bg { fill: #e2e8f0; }
+      @keyframes boltRiseUp { 0% { transform: translateY(80px); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateY(-80px); opacity: 0; } }
+      .bolt-r1 { animation: boltRiseUp 3.2s linear infinite; }
+      .bolt-r3 { animation: boltRiseUp 3.2s linear infinite -0.8s; }
+      .bolt-r5 { animation: boltRiseUp 3.2s linear infinite -1.6s; }
+      .bolt-r7 { animation: boltRiseUp 3.2s linear infinite -2.4s; }
+      @keyframes gearTeethUp { 0% { transform: translateY(0px); } 100% { transform: translateY(-30px); } }
+      .gear-teeth-up { animation: gearTeethUp 0.35s linear infinite; }
+      @keyframes gearTeethDown { 0% { transform: translateY(-30px); } 100% { transform: translateY(0px); } }
+      .gear-teeth-down { animation: gearTeethDown 0.35s linear infinite; }
+      @keyframes motorVibration { 0%, 100% { transform: translateY(0px); } 25% { transform: translateY(-3px); } 75% { transform: translateY(3px); } }
+      .vibrating-unit { animation: motorVibration 0.08s linear infinite; }
+      @keyframes statusPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+      .led-dot { animation: statusPulse 1.2s ease-in-out infinite; }
+      .stopped .bolt-r1, .stopped .bolt-r3, .stopped .bolt-r5, .stopped .bolt-r7,
+      .stopped .gear-teeth-up, .stopped .gear-teeth-down,
+      .stopped .vibrating-unit, .stopped .led-dot { animation-play-state: paused !important; }
+      .card-bg { fill: #ffffff; stroke: #e2e8f0; stroke-width: 0.5; }
+      .card-title { fill: #475569; font-family: system-ui, sans-serif; font-size: 6px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+      .card-value { font-family: system-ui, sans-serif; font-weight: 700; }
+      .card-unit { font-family: system-ui, sans-serif; font-size: 6px; fill: #94a3b8; font-weight: 500; }
+      .time-title { fill: #ffffff; font-family: system-ui, sans-serif; font-size: 6px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+      .time-value { fill: #ffffff; font-family: system-ui, sans-serif; font-weight: 700; }
+      .time-unit { fill: #ffffff; font-family: system-ui, sans-serif; font-size: 6px; font-weight: 500; }
+    </style>
+
+    <radialGradient id="boltGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#e2e8f0"/>
+      <stop offset="70%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </radialGradient>
+
+    <linearGradient id="tapaDarkLeadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="tapaShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.6"/>
+    </filter>
+
+    <linearGradient id="yellowMetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e"/>
+      <stop offset="30%" stop-color="#b45309"/>
+      <stop offset="70%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+
+    <linearGradient id="darkCyanSupportGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#164e63"/>
+      <stop offset="100%" stop-color="#083344"/>
+    </linearGradient>
+
+    <linearGradient id="cianGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0e4b5c"/>
+      <stop offset="50%" stop-color="#0a3a47"/>
+      <stop offset="100%" stop-color="#072e38"/>
+    </linearGradient>
+
+    <!-- Eje blanco/gris claro brillante -->
+    <linearGradient id="shaftGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d1d5db"/>
+      <stop offset="25%" stop-color="#f3f4f6"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#e5e7eb"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+
+    <!-- Nuevo degradado realista del tambor (iluminado arriba, oscuro abajo) -->
+    <linearGradient id="cylinderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="15%" stop-color="#6ee7b7"/>
+      <stop offset="40%" stop-color="#22c55e"/>
+      <stop offset="70%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+
+    <linearGradient id="darkBlueMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="50%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+
+    <filter id="motorBarShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.8" flood-color="#0f172a" flood-opacity="0.5"/>
+    </filter>
+
+    <linearGradient id="cardGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="cardGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+
+    <pattern id="gearTeethPatternLowPoly" width="35" height="30" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="35" height="15" fill="#1e293b"/>
+      <polygon points="2,15 33,15 33,28 2,28" fill="#d97706"/>
+      <polygon points="2,15 18,15 18,28 2,28" fill="#f59e0b"/>
+      <polygon points="2,15 33,15 18,19" fill="#fef08a" opacity="0.9"/>
+    </pattern>
+
+    <clipPath id="cylinderClip"><rect x="420" y="180" width="440" height="160" rx="2"/></clipPath>
+    <clipPath id="gearMajorClip"><rect x="375" y="150" width="35" height="200" rx="2"/></clipPath>
+    <clipPath id="gearPinionClip"><rect x="375" y="348" width="35" height="65" rx="2"/></clipPath>
+
+    <g id="boltRowGroup">
+      <circle cx="440" cy="260" r="4.5" fill="url(#boltGrad)" stroke="#1e293b" stroke-width="0.8"/>
+      <circle cx="500" cy="260" r="4.5" fill="url(#boltGrad)" stroke="#1e293b" stroke-width="0.8"/>
+      <circle cx="560" cy="260" r="4.5" fill="url(#boltGrad)" stroke="#1e293b" stroke-width="0.8"/>
+      <circle cx="620" cy="260" r="4.5" fill="url(#boltGrad)" stroke="#1e293b" stroke-width="0.8"/>
+      <circle cx="680" cy="260" r="4.5" fill="url(#boltGrad)" stroke="#1e293b" stroke-width="0.8"/>
+      <circle cx="740" cy="260" r="4.5" fill="url(#boltGrad)" stroke="#1e293b" stroke-width="0.8"/>
+      <circle cx="800" cy="260" r="4.5" fill="url(#boltGrad)" stroke="#1e293b" stroke-width="0.8"/>
+    </g>
+  </defs>
+
+  <rect class="bg" width="360" height="210"/>
+
+  <!-- PRODUCCIÓN -->
+  <g filter="url(#cardShadow)">
+    <rect class="card-bg" x="10" y="85" width="80" height="30" rx="5" fill="url(#cardGradLeft)"/>
+    <text class="card-title" x="50" y="94" text-anchor="middle">PRODUCCIÓN</text>
+    <text id="prod-val" x="50" y="112" text-anchor="middle" class="card-value" font-size="20" fill="#10b981"
+          inkscape:label="{&quot;attr&quot;:&quot;get&quot;,&quot;tag&quot;:&quot;@1&quot;,&quot;type&quot;:&quot;Good&quot;}">
+      <tspan>%.1f</tspan><tspan class="card-unit"> t/h</tspan>
+    </text>
+  </g>
+
+  <!-- PARADAS -->
+  <g filter="url(#cardShadow)">
+    <rect class="card-bg" x="140" y="50" width="80" height="30" rx="5" fill="url(#cardGradRight)"/>
+    <text class="card-title" x="180" y="59" text-anchor="middle">PARADAS</text>
+    <text id="paradas-val" x="180" y="77" text-anchor="middle" class="card-value" font-size="20" fill="#ef4444"
+          inkscape:label="{&quot;attr&quot;:&quot;get&quot;,&quot;tag&quot;:&quot;@2&quot;,&quot;type&quot;:&quot;Good&quot;}">
+      <tspan>%.0f</tspan>
+    </text>
+    <circle cx="210" cy="65" r="3" fill="#ef4444" class="led-dot"/>
+  </g>
+
+  <!-- TIEMPO -->
+  <g filter="url(#cardShadow)">
+    <rect x="140" y="135" width="80" height="30" rx="5" fill="#b91c1c"/>
+    <text class="time-title" x="180" y="144" text-anchor="middle">TIEMPO</text>
+    <text id="tiempo-val" x="180" y="162" text-anchor="middle" class="time-value" font-size="20"
+          inkscape:label="{&quot;attr&quot;:&quot;get&quot;,&quot;tag&quot;:&quot;@3&quot;,&quot;type&quot;:&quot;Good&quot;}">
+      <tspan>%.1f</tspan><tspan class="time-unit"> h</tspan>
+    </text>
+    <circle cx="210" cy="150" r="3" fill="#ffffff" class="led-dot"/>
+  </g>
+
+  <!-- MOLINO (Escala 0.3) -->
+  <g transform="translate(0, 30) scale(0.3)">
+    <!-- Base y tolvas -->
+    <g>
+      <polygon points="30,465 970,465 970,475 30,475" fill="#334155"/>
+      <polygon points="30,465 970,465 970,467 30,467" fill="#94a3b8"/>
+
+      <!-- Podio izquierdo (motor/reductor) – azul oscuro metálico -->
+      <polygon points="45,425 325,425 340,465 30,465" fill="url(#darkBlueMetal)"/>
+      <polygon points="45,425 325,425 325,428 45,428" fill="#1e40af"/>
+      <rect x="55" y="452" width="10" height="13" fill="#1e293b" rx="1"/>
+      <rect x="310" y="452" width="10" height="13" fill="#1e293b" rx="1"/>
+    </g>
+
+    <!-- Soportes cian (trapecios grandes, más oscuros, sin delineado, con patrón interno) -->
+    <polygon points="325,325 415,325 405,465 335,465" fill="url(#cianGrad)"/>
+    <polygon points="330,330 410,330 402,460 338,460" fill="#a5f3fc" opacity="0.15"/>
+    <polygon points="845,325 935,325 925,465 855,465" fill="url(#cianGrad)"/>
+    <polygon points="850,330 930,330 922,460 858,460" fill="#a5f3fc" opacity="0.15"/>
+
+    <!-- SOPORTES SUPERIORES LATERALES (amarillo ferroviario, detrás) -->
+    <g>
+      <polygon points="335,240 370,248 370,272 335,280" fill="url(#yellowMetalGrad)" stroke="#78350f" stroke-width="1"/>
+      <polygon points="340,230 375,230 375,282 340,282" fill="url(#yellowMetalGrad)" stroke="#78350f" stroke-width="1"/>
+      <polygon points="340,230 375,230 375,256 340,256" fill="#fef08a" opacity="0.3"/>
+      <rect x="340" y="255" width="35" height="3" fill="#1e293b"/>
+      <polygon points="865,248 900,240 900,280 865,272" fill="url(#yellowMetalGrad)" stroke="#78350f" stroke-width="1"/>
+      <polygon points="865,230 900,230 900,282 865,282" fill="url(#yellowMetalGrad)" stroke="#78350f" stroke-width="1"/>
+      <polygon points="865,230 900,230 900,256 865,256" fill="#fef08a" opacity="0.3"/>
+      <rect x="865" y="255" width="35" height="3" fill="#1e293b"/>
+    </g>
+
+    <!-- SOPORTES INFERIORES (cian oscuro, encima del amarillo) -->
+    <rect x="330" y="275" width="50" height="55" rx="4" fill="url(#darkCyanSupportGrad)" stroke="#083344" stroke-width="1.5"/>
+    <polygon points="335,275 375,275 355,305 335,305" fill="#0e7490"/>
+    <rect x="860" y="275" width="50" height="55" rx="4" fill="url(#darkCyanSupportGrad)" stroke="#083344" stroke-width="1.5"/>
+    <polygon points="865,275 905,275 885,305 865,305" fill="#0e7490"/>
+
+    <!-- Motor y caja de reductora (Vibración aumentada y desplazada hacia abajo) -->
+    <g class="vibrating-unit" id="vibrating-unit" transform="translate(0, 4)">
+      <!-- Ejes más gruesos y brillantes (blanco/gris claro) -->
+      <polygon points="145,372 195,372 195,380 145,380" fill="url(#shaftGrad)"/>
+      <circle cx="170" cy="376" r="4" fill="url(#shaftGrad)"/>
+      <polygon points="290,372 380,372 380,380 290,380" fill="url(#shaftGrad)"/>
+      <circle cx="335" cy="376" r="4" fill="url(#shaftGrad)"/>
+
+      <g>
+        <polygon points="55,412 145,412 140,425 60,425" fill="#1e3a8a"/>
+        <polygon points="55,412 145,412 145,414 55,414" fill="#60a5fa"/>
+        <polygon points="60,345 140,345 150,375 140,412 60,412 50,375" fill="#2563eb"/>
+        <polygon points="60,345 140,345 150,375 60,375" fill="#3b82f6"/>
+        <polygon points="60,375 150,375 140,412 60,412" fill="#1d4ed8"/>
+        <polygon points="60,345 140,345 138,348 62,348" fill="#93c5fd"/>
+        <path d="M 72,345 L 72,412 M 86,345 L 86,412 M 100,345 L 100,412 M 114,345 L 114,412 M 128,345 L 128,412" stroke="#475569" stroke-width="3" filter="url(#motorBarShadow)"/>
+        <path d="M 72,375 L 72,412 M 86,375 L 86,412 M 100,375 L 100,412 M 114,375 L 114,412 M 128,375 L 128,412" stroke="#1e293b" stroke-width="2" filter="url(#motorBarShadow)"/>
+        <polygon points="85,326 120,326 125,345 80,345" fill="#93c5fd"/>
+        <polygon points="85,326 120,326 122,330 83,330" fill="#ffffff"/>
+        <polygon points="48,352 60,345 60,412 48,405" fill="#0f172a"/>
+        <circle cx="100" cy="322" r="3.5" fill="none" stroke="#93c5fd" stroke-width="1.5"/>
+      </g>
+      <g>
+        <polygon points="190,320 275,320 295,350 295,425 190,425" fill="#475569"/>
+        <polygon points="190,320 275,320 295,350 190,350" fill="#64748b"/>
+        <polygon points="190,350 295,350 295,425 190,425" fill="#334155"/>
+        <polygon points="190,320 275,320 273,323 192,323" fill="#94a3b8"/>
+        <polygon points="180,420 305,420 300,428 185,428" fill="#1e293b"/>
+        <polygon points="200,312 255,312 260,320 195,320" fill="#94a3b8"/>
+        <circle cx="210" cy="316" r="1" fill="#0f172a"/>
+        <circle cx="245" cy="316" r="1" fill="#0f172a"/>
+        <polygon points="250,360 280,360 285,390 255,390" fill="#1e293b"/>
+        <polygon points="250,360 280,360 280,364 250,364" fill="#64748b"/>
+        <circle cx="215" cy="390" r="5" fill="#facc15"/>
+        <circle class="status-led" id="status-led" cx="280" cy="335" r="3" fill="#22c55e"/>
+      </g>
+    </g>
+
+    <!-- Engranajes -->
+    <rect x="375" y="348" width="35" height="65" fill="#b45309" rx="1"/>
+    <g clip-path="url(#gearPinionClip)">
+      <g class="gear-teeth-down" id="pinon-dientes">
+        <rect x="375" y="320" width="35" height="120" fill="url(#gearTeethPatternLowPoly)"/>
+      </g>
+    </g>
+    <rect x="375" y="150" width="35" height="200" fill="#b45309" rx="1"/>
+    <g clip-path="url(#gearMajorClip)">
+      <g class="gear-teeth-up" id="corona-dientes">
+        <rect x="375" y="120" width="35" height="260" fill="url(#gearTeethPatternLowPoly)"/>
+      </g>
+    </g>
+    <polygon points="371,345 414,345 410,350 375,350" fill="#0f172a" opacity="0.85"/>
+
+    <!-- Cuerpo del Molino (Tambor) con nuevo degradado realista y tapas plomo azul oscuro -->
+    <g id="molino-body-group">
+      <rect x="420" y="180" width="440" height="160" rx="2" fill="#64748b"/>
+      <rect x="410" y="180" width="10" height="160" fill="url(#tapaDarkLeadGrad)" stroke="#1e293b" stroke-width="1" rx="1" filter="url(#tapaShadow)"/>
+      <rect x="860" y="180" width="10" height="160" fill="url(#tapaDarkLeadGrad)" stroke="#1e293b" stroke-width="1" rx="1" filter="url(#tapaShadow)"/>
+      <rect id="molino-body" x="420" y="180" width="440" height="160" rx="2" fill="url(#cylinderGrad)" stroke="#14532d" stroke-width="2"/>
+      <g clip-path="url(#cylinderClip)">
+        <g id="pernos">
+          <use href="#boltRowGroup" class="bolt-r1"/>
+          <use href="#boltRowGroup" class="bolt-r3"/>
+          <use href="#boltRowGroup" class="bolt-r5"/>
+          <use href="#boltRowGroup" class="bolt-r7"/>
+        </g>
+      </g>
+      <polygon points="420,180 860,180 860,215 420,215" fill="#ffffff" opacity="0.22" clip-path="url(#cylinderClip)"/>
+      <polygon points="420,215 860,215 860,285 420,285" fill="#cbd5e1" opacity="0.1" clip-path="url(#cylinderClip)"/>
+      <polygon points="420,300 860,300 860,340 420,340" fill="#0f172a" opacity="0.3" clip-path="url(#cylinderClip)"/>
+    </g>
+  </g>
+
+  <!-- SCRIPT DE CONTROL (idéntico al funcional) -->
+  <rect x="0" y="0" width="0" height="0"
+        inkscape:label="{&quot;attr&quot;:&quot;set&quot;,&quot;src&quot;:&quot;var t = $V('@1'); var svg = document.querySelector('svg'); var body = document.getElementById('molino-body'); var pernos = document.getElementById('pernos'); var corona = document.getElementById('corona-dientes'); var pinon = document.getElementById('pinon-dientes'); var prodVal = document.getElementById('prod-val'); if (t > 0) { svg.classList.remove('stopped'); body.setAttribute('fill', 'url(#cylinderGrad)'); body.setAttribute('stroke', '#14532d'); pernos.style.display = 'block'; corona.style.display = 'block'; pinon.style.display = 'block'; prodVal.setAttribute('fill', '#10b981'); } else { svg.classList.add('stopped'); body.setAttribute('fill', '#dc2626'); body.setAttribute('stroke', '#7f1d1d'); pernos.style.display = 'none'; corona.style.display = 'none'; pinon.style.display = 'none'; prodVal.setAttribute('fill', '#ef4444'); }&quot;,&quot;tag&quot;:&quot;#exec_on_update&quot;,&quot;type&quot;:&quot;Data&quot;}"/>
+</svg>
