@@ -1,0 +1,11 @@
+
+
+
+
+SELECT 
+  (SELECT rms_vertical FROM state WHERE sensor = '189398438' AND time >= $__timeFrom AND time <= $__timeTo ORDER BY time DESC LIMIT 1) AS "@1",
+  (SELECT rms_horizontal FROM state WHERE sensor = '189398438' AND time >= $__timeFrom AND time <= $__timeTo ORDER BY time DESC LIMIT 1) AS "@2",
+  (SELECT rms_axial FROM state WHERE sensor = '189398438' AND time >= $__timeFrom AND time <= $__timeTo ORDER BY time DESC LIMIT 1) AS "@3",
+  (SELECT rms_vertical FROM state WHERE sensor = '189398297' AND time >= $__timeFrom AND time <= $__timeTo ORDER BY time DESC LIMIT 1) AS "@4",
+  (SELECT rms_horizontal FROM state WHERE sensor = '189398297' AND time >= $__timeFrom AND time <= $__timeTo ORDER BY time DESC LIMIT 1) AS "@5",
+  (SELECT rms_axial FROM state WHERE sensor = '189398297' AND time >= $__timeFrom AND time <= $__timeTo ORDER BY time DESC LIMIT 1) AS "@6"
